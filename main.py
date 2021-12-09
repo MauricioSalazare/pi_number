@@ -26,14 +26,17 @@ def monte_carlo_pi_part(n):
 
 
 if __name__=='__main__':
-    process = int(os.environ["SLURM_ARRAY_TASK_ID"])
+    # process = int(os.environ["SLURM_ARRAY_TASK_ID"])
+    # np = int(os.environ["SLURM_CPUS_PER_TASK"])
 
     random.seed()
-    np = mp.cpu_count()
+    # np = mp.cpu_count()
+    np = 5
+    process = 1
     print('You have {0:1d} CPUs'.format(np))
 
     # Number of points to use for the Pi estimation
-    n = 1_000_000
+    n = 100_000_000
 
     # iterable with a list of points to generate in each worker
     # each worker process gets n/np number of points to calculate Pi from
