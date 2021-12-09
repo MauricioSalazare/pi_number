@@ -9,6 +9,7 @@ import random
 import multiprocessing as mp
 from time import perf_counter
 import pickle
+import os
 
 def monte_carlo_pi_part(n):
 
@@ -25,8 +26,9 @@ def monte_carlo_pi_part(n):
 
 
 if __name__=='__main__':
+    process = int(os.environ["SLURM_ARRAY_TASK_ID"])
+
     random.seed()
-    process = 1
     np = mp.cpu_count()
     print('You have {0:1d} CPUs'.format(np))
 
