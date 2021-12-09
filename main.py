@@ -8,8 +8,7 @@ http: // docs.python.org / library / multiprocessing.html  # module-multiprocess
 import random
 import multiprocessing as mp
 from time import perf_counter
-#caculate the number of points in the unit circle
-#out of n points
+
 def monte_carlo_pi_part(n):
 
     count = 0
@@ -17,7 +16,7 @@ def monte_carlo_pi_part(n):
         x = random.random()
         y = random.random()
 
-        # if it is within the unit circle
+        # Point in the unit circle
         if x*x + y*y <= 1:
             count=count+1
 
